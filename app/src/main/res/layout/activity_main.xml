@@ -4,16 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/login_acct"
+
+    >
 
     <EditText
         android:id="@+id/Text1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="User Name"
+        android:inputType="textPersonName"
+        android:layout_marginTop="350dp"
+        android:drawableLeft="@drawable/ic_baseline_account_circle_24"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_margin="20dp"/>
+       />
+
     <EditText
         android:id="@+id/Text2"
         android:layout_width="match_parent"
@@ -21,24 +31,37 @@
         app:layout_constraintTop_toBottomOf="@+id/Text1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_margin="20dp"/>
+        android:layout_margin="20dp"
+        android:inputType="textPassword"
+        android:drawableLeft="@drawable/ic_baseline_lock_24"
+        android:hint="Password"/>
 
     <Button
         android:id="@+id/login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginLeft="40dp"
         android:layout_marginTop="40dp"
+        android:layout_marginRight="40dp"
         android:text="Login"
-        app:layout_constraintStart_toStartOf="@+id/Text2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Text2" />
 
-    <Button
+    <TextView
         android:id="@+id/registerMe"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/bluestroke"
         android:text="Register"
-        android:layout_marginTop="40dp"
-        app:layout_constraintEnd_toEndOf="@+id/Text2"
-        app:layout_constraintTop_toBottomOf="@+id/Text2" />
+        android:gravity="center"
+        android:textIsSelectable="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login"
+        app:rippleColor="#FFFFFF" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
