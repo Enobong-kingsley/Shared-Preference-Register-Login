@@ -24,12 +24,11 @@ class Register : AppCompatActivity() {
 
 
             val preferences: SharedPreferences = getSharedPreferences("MYPREFS", MODE_PRIVATE)
-            val newUser: String = userName.getText().toString()
-            val newPassword: String = password.getText().toString()
-            val newEmail: String = email.getText().toString()
+            val newUser: String = userName.text.toString()
+            val newPassword: String = password.text.toString()
+            val newEmail: String = email.text.toString()
+
             val editor: SharedPreferences.Editor = preferences.edit()
-
-
             editor.putString(newUser, newUser)
             editor.commit()
             editor.putString(newPassword, newPassword)
