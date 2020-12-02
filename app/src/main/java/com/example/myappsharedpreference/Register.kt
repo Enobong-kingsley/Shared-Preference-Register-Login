@@ -13,28 +13,25 @@ class Register : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.register)
 
-        val userName = findViewById<EditText>(R.id.editText1)
-        val password = findViewById<EditText>(R.id.editText2)
-        val email = findViewById<EditText>(R.id.editText3)
+        val userName = findViewById<EditText>(R.id.user_name)
+        val password = findViewById<EditText>(R.id.password)
+        val email = findViewById<EditText>(R.id.email)
         val btnRegister = findViewById<Button>(R.id.register)
         val backToLogin = findViewById<TextView>(R.id.back_to_login)
 
         btnRegister.setOnClickListener {
-
-
-
             val preferences: SharedPreferences = getSharedPreferences("MYPREFS", MODE_PRIVATE)
-            val newUser: String = userName.text.toString()
-            val newPassword: String = password.text.toString()
-            val newEmail: String = email.text.toString()
-
+            val newUser: String = userName.getText().toString()
+            val newPassword: String = password.getText().toString()
+            val newEmail: String = email.getText().toString()
             val editor: SharedPreferences.Editor = preferences.edit()
-            editor.putString(newUser, newUser)
+
+
+            editor.putString(newUser + newPassword + "data",newUser + "\n" + newEmail)
             editor.commit()
-            editor.putString(newPassword, newPassword)
-            editor.commit()
-            editor.putString(newUser + newPassword + "data", """ $newUser $newEmail """.trimIndent())
-            editor.commit()
+
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
         }
         backToLogin.setOnClickListener {
             val intent = Intent(this,MainActivity::class.java)
